@@ -15,3 +15,12 @@ int main() {
     getchar();
     return 0;
 }
+/*
+# Compilar e executar
+gcc -o syscall_test syscall_test.c
+
+# Analisar com perf
+sudo perf trace -e raw_syscalls:sys_enter,
+raw_syscalls:sys_exit ./syscall_test
+
+*/

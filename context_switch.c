@@ -40,3 +40,18 @@ int main() {
 
     return 0;
 }
+/*
+# Compilar com debug symbols
+gcc -g -o context_switch context_switch.c -lpthread
+
+# Medir context switches
+sudo perf stat -e context-switches,cpu-migrations
+ ./context_switch
+
+# Profile do scheduler
+sudo perf record -e sched:sched_switch,sched:sched_stat_wait
+ ./context_switch
+
+sudo perf script | head -20
+*/
+

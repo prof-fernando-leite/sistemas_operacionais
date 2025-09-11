@@ -55,3 +55,10 @@ int main() {
     
     return 0;
 }
+
+# Compilar com thread sanitizer
+gcc -fsanitize=thread -g -o 
+race_condition race_condition.c -lpthread
+
+# Usar perf para analisar overhead de locking
+sudo perf stat -e cache-misses,cycles,instructions
